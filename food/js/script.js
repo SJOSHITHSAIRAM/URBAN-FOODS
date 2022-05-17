@@ -87,3 +87,6 @@ function fadeOut(){
 }
 
 window.onload = fadeOut;
+
+// I need some space
+document.getElementById('i-need-space').innerHTML = '\n\n\n\n\n\n\n';
