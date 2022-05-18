@@ -7,6 +7,13 @@ function reviewReadValues()
     r_address = review_form.review_address.value;
     r_message = review_form.review_message.value;
 
+
+if(r_name == '' && r_email == '' && r_stars == '' && r_number == '' && r_address == '' && r_message == '')
+{
+    window.alert('please enter all details in the form before submitting');
+}
+
+else{
     if(r_name == ''){
         window.alert('please enter name')
     }
@@ -38,11 +45,12 @@ function reviewReadValues()
 
     if(r_stars > 5 || r_stars < 1)
     {
-        window.alert('please enter 1-5');
+        window.alert('please enter stars between 1 to 5');
     }
 
     if(r_number.length > 11)
     {
         window.alert('please enter 10 digit number')
     }
+}
 }
