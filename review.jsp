@@ -12,7 +12,7 @@
         Connection con = null;
         Class.forName("oracle.jdbc.driver.OracleDriver");
         con = DriverManager.getConnection("jdbc:oracle:thin:@joshith:1521:orcle123","scott","tiger123");
-        String qry = "insert into temp values(?,?,?,?,?,?)";
+        String qry = "insert into review values(?,?,?,?,?,?)";
         PreparedStatement pstmt = con.prepareStatement(qry);
         pstmt.setString(1,name);
         pstmt.setString(2,email);
@@ -21,12 +21,18 @@
         pstmt.setString(5,address);
         pstmt.setString(6,message);
         int sts = pstmt.executeUpdate();
-        out.println(sts+"row inserted successfully");
-        String redirectUrl = "http://localhost:8081/URBAN-FOODS/food/index.html";
-        response.sendRedirect(redirectUrl);
     }
     catch(Exception e)
     {
         out.println(e);
     }
 %>
+<html>
+    <script>
+        setTimeout(function(){
+            window.location.href = "http://localhost:8081/URBAN-FOODS/review.html"
+        },5000);
+    </script>
+    <p>Hey &#128075; <%= name %></p>
+    <p>Thanks for your review &#128150;</p>
+</html>
