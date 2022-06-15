@@ -25,8 +25,6 @@
         pstmt.setString(7,address);
         pstmt.setString(8,message);
         int sts = pstmt.executeUpdate();
-        String redirectURL = "http://localhost:8081/URBAN-FOODS/payment_form.html"
-        response.sendRedirect(redirectURL)
     }
     catch(Exception e)
     {
@@ -36,9 +34,9 @@
 <html>
     <script>
         setTimeout(function(){
-            window.location.href = "http://localhost:8081/URBAN-FOODS/order.html"
+            window.location.href = "http://localhost:8081/URBAN-FOODS/payment_form.html"
         },5000);
     </script>
     <p>Hey &#128075; <%= name %></p>
-    <p>Your order is placed &#128150;</p>
+    <p>Your order is placed please confirm your payment now! &#128150;</p>
 </html>
