@@ -1,0 +1,14 @@
+Admin
+1. The role of admin is to insert menu
+2. view users who booked the order
+3. view all users
+4. view users by date
+5 view employees by joining date
+
+User
+
+1. Registration
+2. login
+3. view current day menu items
+4. view cars
+5. Buy car

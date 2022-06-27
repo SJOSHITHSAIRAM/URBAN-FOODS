@@ -1,3 +1,11 @@
+<%@ page import="java.sql.*"%>
+<%@ page import="javax.servlet.http.*,java.lang.*"%>
+<%
+    response.setHeader("Cache-Control","no-cache, no-store, must-revalidate"); // HTTP 1.1
+    if (session.getAttribute("success-login-uname")==null){
+        response.sendRedirect("http://localhost:8081/URBAN-FOODS/login.html");
+    }
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,23 +32,24 @@
 
 <header>
 
-    <a href="index.html" class="logo"><i class="fas fa-utensils"></i> Urban Food</a>
+    <a href="index.jsp" class="logo"><i class="fas fa-utensils"></i> Urban Food</a>
 
     <nav class="navbar">
-        <a href="index.html">home</a>
-        <a class="active" href="dishes.html">dishes</a>
-        <a href="index.html#about">about</a>
-        <a href="menu.html">menu</a>
-        <a href="review.html">review</a>
-        <a href="order.html">order</a>
+        <a href="index.jsp">home</a>
+        <a class="active" href="dishes.jsp">dishes</a>
+        <a href="index.jsp#about">about</a>
+        <a href="menu.jsp">menu</a>
+        <a href="review_form.jsp">review</a>
+        <a href="order_now.jsp">order</a>
+        <a href="#">Hello &#128075; <% String index_uname = (String) session.getAttribute("success-login-uname"); %> <%= index_uname %></a>
     </nav>
 
     <div class="icons">
         <i class="fas fa-bars" id="menu-bars"></i>
         <i class="fas fa-search" id="search-icon"></i>
-        <a href="index.html#" class="fas fa-heart"></a>
-        <a href="index.html#" class="fas fa-shopping-cart"></a>
-        <a href="login.html" class="fas fa-user"></a>
+        <a href="index.jsp#" class="fas fa-heart"></a>
+        <a href="index.jsp#" class="fas fa-shopping-cart"></a>
+        <a href="logout.jsp" class="fas fa-sign-out-alt"></a>
     </div>
 
 </header>
@@ -82,7 +91,7 @@
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star-half-alt"></i>
             </div>
-            <span>₹449</span>
+            <span>&#8377;449</span>
             <a href="#" class="btn">add to cart</a>
         </div>
 
@@ -98,7 +107,7 @@
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star-half-alt"></i>
             </div>
-            <span>₹599</span>
+            <span>&#8377;599</span>
             <a href="#" class="btn">add to cart</a>
         </div>
 
@@ -114,7 +123,7 @@
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star-half-alt"></i>
             </div>
-            <span>₹449</span>
+            <span>&#8377;449</span>
             <a href="#" class="btn">add to cart</a>
         </div>
 
@@ -130,7 +139,7 @@
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star-half-alt"></i>
             </div>
-            <span>₹399</span>
+            <span>&#8377;399</span>
             <a href="#" class="btn">add to cart</a>
         </div>
 
@@ -146,7 +155,7 @@
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star-half-alt"></i>
             </div>
-            <span>₹499</span>
+            <span>&#8377;499</span>
             <a href="#" class="btn">add to cart</a>
         </div>
 
@@ -162,7 +171,7 @@
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star-half-alt"></i>
             </div>
-            <span>₹349</span>
+            <span>&#8377;349</span>
             <a href="#" class="btn">add to cart</a>
         </div>
         <!-- Extra items start -->
@@ -179,7 +188,7 @@
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star-half-alt"></i>
             </div>
-            <span>₹99</span>
+            <span>&#8377;99</span>
             <a href="#" class="btn">add to cart</a>
         </div>
         <div class="box">
@@ -194,7 +203,7 @@
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star-half-alt"></i>
             </div>
-            <span>₹149</span>
+            <span>&#8377;149</span>
             <a href="#" class="btn">add to cart</a>
         </div>
         <div class="box">
@@ -209,7 +218,7 @@
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star-half-alt"></i>
             </div>
-            <span>₹149</span>
+            <span>&#8377;149</span>
             <a href="#" class="btn">add to cart</a>
         </div>
         <div class="box">
@@ -224,7 +233,7 @@
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star-half-alt"></i>
             </div>
-            <span>₹199</span>
+            <span>&#8377;199</span>
             <a href="#" class="btn">add to cart</a>
         </div>
         <div class="box">
@@ -239,7 +248,7 @@
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star-half-alt"></i>
             </div>
-            <span>₹99</span>
+            <span>&#8377;99</span>
             <a href="#" class="btn">add to cart</a>
         </div>
         <div class="box">
@@ -254,7 +263,7 @@
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star-half-alt"></i>
             </div>
-            <span>₹99</span>
+            <span>&#8377;99</span>
             <a href="#" class="btn">add to cart</a>
         </div>
         <div class="box">
@@ -269,7 +278,7 @@
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star-half-alt"></i>
             </div>
-            <span>₹199</span>
+            <span>&#8377;199</span>
             <a href="#" class="btn">add to cart</a>
         </div>
         <div class="box">
@@ -284,7 +293,7 @@
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star-half-alt"></i>
             </div>
-            <span>₹149</span>
+            <span>&#8377;149</span>
             <a href="#" class="btn">add to cart</a>
         </div>
         <div class="box">
@@ -299,7 +308,7 @@
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star-half-alt"></i>
             </div>
-            <span>₹199</span>
+            <span>&#8377;199</span>
             <a href="#" class="btn">add to cart</a>
         </div>
         <div class="box">
@@ -314,7 +323,7 @@
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star-half-alt"></i>
             </div>
-            <span>₹199</span>
+            <span>&#8377;199</span>
             <a href="#" class="btn">add to cart</a>
         </div>
         <div class="box">
@@ -329,7 +338,7 @@
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star-half-alt"></i>
             </div>
-            <span>₹399</span>
+            <span>&#8377;399</span>
             <a href="#" class="btn">add to cart</a>
         </div>
         <div class="box">
@@ -344,7 +353,7 @@
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star-half-alt"></i>
             </div>
-            <span>₹149</span>
+            <span>&#8377;149</span>
             <a href="#" class="btn">add to cart</a>
         </div>
         <div class="box">
@@ -359,7 +368,7 @@
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star-half-alt"></i>
             </div>
-            <span>₹199</span>
+            <span>&#8377;199</span>
             <a href="#" class="btn">add to cart</a>
         </div>
         <div class="box">
@@ -374,7 +383,7 @@
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star-half-alt"></i>
             </div>
-            <span>₹199</span>
+            <span>&#8377;199</span>
             <a href="#" class="btn">add to cart</a>
         </div>
 

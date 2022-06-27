@@ -1,3 +1,11 @@
+<%@ page import="java.sql.*"%>
+<%@ page import="javax.servlet.http.*,java.lang.*"%>
+<%
+    response.setHeader("Cache-Control","no-cache, no-store, must-revalidate"); // HTTP 1.1
+    if (session.getAttribute("success-login-uname")==null){
+        response.sendRedirect("http://localhost:8081/URBAN-FOODS/login.html");
+    }
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,23 +32,24 @@
 
 <header>
 
-    <a href="index.html" class="logo"><i class="fas fa-utensils"></i> Urban Food</a>
+    <a href="index.jsp" class="logo"><i class="fas fa-utensils"></i> Urban Food</a>
 
     <nav class="navbar">
-        <a href="index.html">home</a>
-        <a href="dishes.html">dishes</a>
-        <a href="index.html#about">about</a>
-        <a class="active" href="menu.html">menu</a>
-        <a href="review.html">review</a>
-        <a href="order.html">order</a>
+        <a href="index.jsp">home</a>
+        <a href="dishes.jsp">dishes</a>
+        <a href="index.jsp#about">about</a>
+        <a class="active" href="menu.jsp">menu</a>
+        <a href="review_form.jsp">review</a>
+        <a href="order_now.jsp">order</a>
+        <a href="#">Hello &#128075; <% String index_uname = (String) session.getAttribute("success-login-uname"); %> <%= index_uname %></a>
     </nav>
 
     <div class="icons">
         <i class="fas fa-bars" id="menu-bars"></i>
         <i class="fas fa-search" id="search-icon"></i>
-        <a href="index.html#" class="fas fa-heart"></a>
-        <a href="index.html#" class="fas fa-shopping-cart"></a>
-        <a href="login.html" class="fas fa-user"></a>
+        <a href="index.jsp#" class="fas fa-heart"></a>
+        <a href="index.jsp#" class="fas fa-shopping-cart"></a>
+        <a href="logout.jsp" class="fas fa-sign-out-alt"></a>
     </div>
 
 </header>
@@ -86,7 +95,7 @@
                 <h3>Pizza</h3>
                 <p>The delicious pizza you can eat,it's cheesy</p>
                 <a href="#" class="btn">add to cart</a>
-                <span class="price">₹249</span>
+                <span class="price">&#8377;249</span>
             </div>
         </div>
 
@@ -106,7 +115,7 @@
                 <h3>Ham Burger</h3>
                 <p>Smoked burger with great saucy taste.</p>
                 <a href="#" class="btn">add to cart</a>
-                <span class="price">₹299</span>
+                <span class="price">&#8377;299</span>
             </div>
         </div>
 
@@ -126,7 +135,7 @@
                 <h3>Cheese Rolls</h3>
                 <p>Saucy and spicy rolls with extra cheese and herbs.</p>
                 <a href="#" class="btn">add to cart</a>
-                <span class="price">₹439</span>
+                <span class="price">&#8377;439</span>
             </div>
         </div>
 
@@ -146,7 +155,7 @@
                 <h3>Choco Icecream</h3>
                 <p>The best Choco icecream with more vanilla.</p>
                 <a href="#" class="btn">add to cart</a>
-                <span class="price">₹589</span>
+                <span class="price">&#8377;589</span>
             </div>
         </div>
 
@@ -166,7 +175,7 @@
                 <h3>Peanut Rolls</h3>
                 <p>The great protein source food,tossed with berries.</p>
                 <a href="#" class="btn">add to cart</a>
-                <span class="price">₹649</span>
+                <span class="price">&#8377;649</span>
             </div>
         </div>
 
@@ -186,7 +195,7 @@
                 <h3>Cup cakes</h3>
                 <p>Great cupcakes with blackberry cream</p>
                 <a href="#" class="btn">add to cart</a>
-                <span class="price">₹599</span>
+                <span class="price">&#8377;599</span>
             </div>
         </div>
 
@@ -206,7 +215,7 @@
                 <h3>Refreshers</h3>
                 <p>Some of the fruit refreshments to chill you!</p>
                 <a href="#" class="btn">add to cart</a>
-                <span class="price">₹199</span>
+                <span class="price">&#8377;199</span>
             </div>
         </div>
 
@@ -226,7 +235,7 @@
                 <h3>Fruit Salad</h3>
                 <p>Strawberry,blueberry,banana... with great fruits</p>
                 <a href="#" class="btn">add to cart</a>
-                <span class="price">₹699</span>
+                <span class="price">&#8377;699</span>
             </div>
         </div>
 
@@ -246,7 +255,7 @@
                 <h3>Lemonade</h3>
                 <p>Chill lemonade refreshments.</p>
                 <a href="#" class="btn">add to cart</a>
-                <span class="price">₹99</span>
+                <span class="price">&#8377;99</span>
             </div>
         </div>
         <!-- Extra menu Items -->
@@ -266,7 +275,7 @@
                 <h3>Fry piece biryani</h3>
                 <p>try our new delicious fry piece biryani</p>
                 <a href="#" class="btn">add to cart</a>
-                <span class="price">₹499</span>
+                <span class="price">&#8377;499</span>
             </div>
         </div>
         <div class="box">
@@ -285,7 +294,7 @@
                 <h3>Maggi donuts</h3>
                 <p>Yummy maggi 🍜 donuts.</p>
                 <a href="#" class="btn">add to cart</a>
-                <span class="price">₹299</span>
+                <span class="price">&#8377;299</span>
             </div>
         </div>
         <div class="box">
@@ -304,7 +313,7 @@
                 <h3>Mutton dum biryani</h3>
                 <p>Try our most popular Mutton biryani</p>
                 <a href="#" class="btn">add to cart</a>
-                <span class="price">₹599</span>
+                <span class="price">&#8377;599</span>
             </div>
         </div>
         <div class="box">
@@ -323,7 +332,7 @@
                 <h3>Egg biryani</h3>
                 <p>Delicious egg biryani</p>
                 <a href="#" class="btn">add to cart</a>
-                <span class="price">₹149</span>
+                <span class="price">&#8377;149</span>
             </div>
         </div>
         <div class="box">
@@ -342,7 +351,7 @@
                 <h3>Egg curry</h3>
                 <p>Yummy egg curry</p>
                 <a href="#" class="btn">add to cart</a>
-                <span class="price">₹99</span>
+                <span class="price">&#8377;99</span>
             </div>
         </div>
         <div class="box">
@@ -361,7 +370,7 @@
                 <h3>Chicken pulav</h3>
                 <p>Smoky chicken pulav 🔥</p>
                 <a href="#" class="btn">add to cart</a>
-                <span class="price">₹149</span>
+                <span class="price">&#8377;149</span>
             </div>
         </div>
         <div class="box">
@@ -380,7 +389,7 @@
                 <h3>Chicken biryani</h3>
                 <p>Try our simple chicken biryani</p>
                 <a href="#" class="btn">add to cart</a>
-                <span class="price">₹199</span>
+                <span class="price">&#8377;199</span>
             </div>
         </div>
         <div class="box">
@@ -399,7 +408,7 @@
                 <h3>Chicken fry piece briyani</h3>
                 <p>Try our most popular fry piece biryani</p>
                 <a href="#" class="btn">add to cart</a>
-                <span class="price">₹299</span>
+                <span class="price">&#8377;299</span>
             </div>
         </div>
         <div class="box">
@@ -418,7 +427,7 @@
                 <h3>Classic chicken biryani</h3>
                 <p>Try our most popular classic chicken biryani</p>
                 <a href="#" class="btn">add to cart</a>
-                <span class="price">₹299</span>
+                <span class="price">&#8377;299</span>
             </div>
         </div>
         <div class="box">
@@ -437,7 +446,7 @@
                 <h3>cold coffee ❄</h3>
                 <p>Try our chilling cold coffee ☕</p>
                 <a href="#" class="btn">add to cart</a>
-                <span class="price">₹199</span>
+                <span class="price">&#8377;199</span>
             </div>
         </div>
         <div class="box">
@@ -456,7 +465,7 @@
                 <h3>Simple Egg biryani</h3>
                 <p>try our Simple egg biryani</p>
                 <a href="#" class="btn">add to cart</a>
-                <span class="price">₹99</span>
+                <span class="price">&#8377;99</span>
             </div>
         </div>
         <div class="box">
@@ -475,7 +484,7 @@
                 <h3>Egg rolls</h3>
                 <p>Try our fav egg rolls 🍳</p>
                 <a href="#" class="btn">add to cart</a>
-                <span class="price">₹99</span>
+                <span class="price">&#8377;99</span>
             </div>
         </div>
         <div class="box">
@@ -494,7 +503,7 @@
                 <h3>Egg thali</h3>
                 <p>Try our fav egg thali 🍳</p>
                 <a href="#" class="btn">add to cart</a>
-                <span class="price">₹149</span>
+                <span class="price">&#8377;149</span>
             </div>
         </div>
         <div class="box">
@@ -513,7 +522,7 @@
                 <h3>Badam milk</h3>
                 <p>Cool badam milk ❄</p>
                 <a href="#" class="btn">add to cart</a>
-                <span class="price">₹99</span>
+                <span class="price">&#8377;99</span>
             </div>
         </div>
         <div class="box">
@@ -532,7 +541,7 @@
                 <h3>Fish curry</h3>
                 <p>🐡 curry</p>
                 <a href="#" class="btn">add to cart</a>
-                <span class="price">₹99</span>
+                <span class="price">&#8377;99</span>
             </div>
         </div>
         <div class="box">
@@ -551,7 +560,7 @@
                 <h3>fish fry</h3>
                 <p>Delicious fish fry</p>
                 <a href="#" class="btn">add to cart</a>
-                <span class="price">₹99</span>
+                <span class="price">&#8377;99</span>
             </div>
         </div>
         <div class="box">
@@ -570,7 +579,7 @@
                 <h3>Frankie</h3>
                 <p>Hot Frankie 🌶</p>
                 <a href="#" class="btn">add to cart</a>
-                <span class="price">₹99</span>
+                <span class="price">&#8377;99</span>
             </div>
         </div>
         <div class="box">
@@ -589,7 +598,7 @@
                 <h3>Juice</h3>
                 <p>Yummy 😋 juice</p>
                 <a href="#" class="btn">add to cart</a>
-                <span class="price">₹99</span>
+                <span class="price">&#8377;99</span>
             </div>
         </div>
         <div class="box">
@@ -608,7 +617,7 @@
                 <h3>Desert</h3>
                 <p>Yummy Desert</p>
                 <a href="#" class="btn">add to cart</a>
-                <span class="price">₹99</span>
+                <span class="price">&#8377;99</span>
             </div>
         </div>
         <div class="box">
@@ -627,7 +636,7 @@
                 <h3>Mutton curry</h3>
                 <p>Spicy mutton curry 🔥</p>
                 <a href="#" class="btn">add to cart</a>
-                <span class="price">₹99</span>
+                <span class="price">&#8377;99</span>
             </div>
         </div>
         <div class="box">
@@ -646,7 +655,7 @@
                 <h3>Mini Pizza</h3>
                 <p>Cheesy mini pizza</p>
                 <a href="#" class="btn">add to cart</a>
-                <span class="price">₹99</span>
+                <span class="price">&#8377;99</span>
             </div>
         </div>
         <div class="box">
@@ -665,7 +674,7 @@
                 <h3>Potato cutlet</h3>
                 <p>Yummy potato cutlet</p>
                 <a href="#" class="btn">add to cart</a>
-                <span class="price">₹99</span>
+                <span class="price">&#8377;99</span>
             </div>
         </div>
         <div class="box">
@@ -684,7 +693,7 @@
                 <h3>Prawns biryani</h3>
                 <p>Spicy prawns biryani</p>
                 <a href="#" class="btn">add to cart</a>
-                <span class="price">₹99</span>
+                <span class="price">&#8377;99</span>
             </div>
         </div>
         <div class="box">
@@ -703,7 +712,7 @@
                 <h3>Sandwich</h3>
                 <p>cheesy sandwich</p>
                 <a href="#" class="btn">add to cart</a>
-                <span class="price">₹99</span>
+                <span class="price">&#8377;99</span>
             </div>
         </div>
         <div class="box">
@@ -722,7 +731,7 @@
                 <h3>Starter</h3>
                 <p>cheesy starter</p>
                 <a href="#" class="btn">add to cart</a>
-                <span class="price">₹99</span>
+                <span class="price">&#8377;99</span>
             </div>
         </div>
         <div class="box">
@@ -741,7 +750,7 @@
                 <h3>Veg Friedrice</h3>
                 <p>veg friedrice</p>
                 <a href="#" class="btn">add to cart</a>
-                <span class="price">₹99</span>
+                <span class="price">&#8377;99</span>
             </div>
         </div>
         <div class="box">
@@ -760,7 +769,7 @@
                 <h3>Paratha</h3>
                 <p>yummy paratha with butter</p>
                 <a href="#" class="btn">add to cart</a>
-                <span class="price">₹99</span> 
+                <span class="price">&#8377;99</span> 
             </div>
         </div>
         <div class="box">
@@ -779,7 +788,7 @@
                 <h3>Zera rice</h3>
                 <p>tasty zera rice.</p>
                 <a href="#" class="btn">add to cart</a>
-                <span class="price">₹99</span>
+                <span class="price">&#8377;99</span>
             </div>
         </div>
         <!-- Extra menu items ends -->

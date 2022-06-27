@@ -28,11 +28,11 @@
 
     <nav class="navbar">
         <a href="index.html">home</a>
-        <a href="dishes.html">dishes</a>
+        <a href="dishes.jsp">dishes</a>
         <a href="index.html#about">about</a>
-        <a href="menu.html">menu</a>
-        <a class="active" href="review.html">review</a>
-        <a href="order.html">order</a>
+        <a href="menu.jsp">menu</a>
+        <a class="active" href="review_form.jsp">review</a>
+        <a href="order_now.jsp">order</a>
     </nav>
 
     <div class="icons">
@@ -40,7 +40,6 @@
         <i class="fas fa-search" id="search-icon"></i>
         <a href="index.html#" class="fas fa-heart"></a>
         <a href="index.html#" class="fas fa-shopping-cart"></a>
-        <a href="login.html" class="fas fa-user"></a>
     </div>
 
 </header>
@@ -153,7 +152,7 @@
 <!--custom review starts-->
 
 <section class="order">
-<h1 class="heading">Your Review ✍</h1>
+<h1 class="heading">Your Review &#9997;</h1>
 <form name="review_form" action="review.jsp" method="post">
     <div class="inputBox">
         <div class="input">
