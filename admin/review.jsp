@@ -30,9 +30,9 @@
 <html>
     <script>
         setTimeout(function(){
-            window.location.href = "http://localhost:8081/URBAN-FOODS/review_form.jsp"
+            window.location.href = "http://localhost:8081/URBAN-FOODS/admin/review_form.jsp"
         },5000);
     </script>
-    <p>Hey &#128075; <%= name %></p>
+    <p>Hey &#128075; <% String index_uname = (String) session.getAttribute("success-admin-login-uname"); %> <%= index_uname %></p>
     <p>Thanks for your review &#128150;</p>
 </html>

@@ -9,13 +9,13 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
     <!--Favicon-->
-    <link rel="icon" type="image/x-icon" href="/images/utensils-solid.png">
+    <link rel="icon" type="image/x-icon" href="http://localhost:8081/URBAN-FOODS/images/utensils-solid.png">
 
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <!-- custom css file link  -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="http://localhost:8081/URBAN-FOODS/css/style.css">
 
 </head>
 <body>
@@ -24,22 +24,22 @@
 
 <header>
 
-    <a href="index.jsp" class="logo"><i class="fas fa-utensils"></i> Urban Food</a>
+    <a href="http://localhost:8081/URBAN-FOODS/admin/index.jsp" class="logo"><i class="fas fa-utensils"></i> Urban Food</a>
 
     <nav class="navbar">
-        <a href="index.jsp">home</a>
-        <a href="dishes.jsp">dishes</a>
-        <a href="index.jsp#about">about</a>
-        <a href="menu.jsp">menu</a>
-        <a class="active" href="review_form.jsp">review</a>
-        <a href="order_now.jsp">order</a>
+        <a href="http://localhost:8081/URBAN-FOODS/admin/index.jsp">home</a>
+        <a href="http://localhost:8081/URBAN-FOODS/admin/dishes.jsp">dishes</a>
+        <a href="http://localhost:8081/URBAN-FOODS/admin/index.jsp#about">about</a>
+        <a href="http://localhost:8081/URBAN-FOODS/admin/menu.jsp">menu</a>
+        <a class="active" href="http://localhost:8081/URBAN-FOODS/admin/review_form.jsp">review</a>
+        <a href="http://localhost:8081/URBAN-FOODS/admin/order_now.jsp">order</a>
     </nav>
 
     <div class="icons">
         <i class="fas fa-bars" id="menu-bars"></i>
         <i class="fas fa-search" id="search-icon"></i>
-        <a href="index.jsp#" class="fas fa-heart"></a>
-        <a href="index.jsp#" class="fas fa-shopping-cart"></a>
+        <a href="http://localhost:8081/URBAN-FOODS/admin/index.jsp#" class="fas fa-heart"></a>
+        <a href="http://localhost:8081/URBAN-FOODS/admin/index.jsp#" class="fas fa-shopping-cart"></a>
     </div>
 
 </header>
@@ -73,7 +73,7 @@
             <div class="swiper-slide slide">
                 <i class="fas fa-quote-right"></i>
                 <div class="user">
-                    <img src="images/kumar-sai.jpeg" alt="">
+                    <img src="http://localhost:8081/URBAN-FOODS/images/kumar-sai.jpeg" alt="">
                     <div class="user-info">
                         <h3>Kumar Sai</h3>
                         <div class="stars">
@@ -91,7 +91,7 @@
             <div class="swiper-slide slide">
                 <i class="fas fa-quote-right"></i>
                 <div class="user">
-                    <img src="images/srikanth.JPG" alt="">
+                    <img src="http://localhost:8081/URBAN-FOODS/images/srikanth.JPG" alt="">
                     <div class="user-info">
                         <h3>Srikanth Kandi</h3>
                         <div class="stars">
@@ -109,7 +109,7 @@
             <div class="swiper-slide slide">
                 <i class="fas fa-quote-right"></i>
                 <div class="user">
-                    <img src="images/joshith.jpg" alt="">
+                    <img src="http://localhost:8081/URBAN-FOODS/images/joshith.jpg" alt="">
                     <div class="user-info">
                         <h3>Joshith Sai Ram</h3>
                         <div class="stars">
@@ -127,7 +127,7 @@
             <div class="swiper-slide slide">
                 <i class="fas fa-quote-right"></i>
                 <div class="user">
-                    <img src="images/murali.jpeg" alt="">
+                    <img src="http://localhost:8081/URBAN-FOODS/images/murali.jpeg" alt="">
                     <div class="user-info">
                         <h3>Murali Krishna</h3>
                         <div class="stars">
@@ -153,7 +153,7 @@
 
 <section class="order">
 <h1 class="heading">Your Review &#9997;</h1>
-<form name="review_form" action="review.jsp" method="post">
+<form name="review_form" action="http://localhost:8081/URBAN-FOODS/admin/review.jsp" method="post">
     <div class="inputBox">
         <div class="input">
             <span>your name</span>
@@ -240,7 +240,7 @@
 
 <!-- loader part  -->
 <div class="loader-container">
-    <img src="images/loader.gif" alt="">
+    <img src="http://localhost:8081/URBAN-FOODS/images/loader.gif" alt="">
 </div>
 
 
@@ -266,7 +266,7 @@
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
 <!-- custom js file link  -->
-<script src="js/script.js"></script>
-<script src="js/review.js"></script>
+<script src="http://localhost:8081/URBAN-FOODS/js/script.js"></script>
+<script src="http://localhost:8081/URBAN-FOODS/js/review.js"></script>
 </body>
 </html>

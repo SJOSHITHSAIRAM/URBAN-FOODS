@@ -1,21 +1,30 @@
+<%@ page import="java.sql.*"%>
+<%@ page import="javax.servlet.http.*,java.lang.*"%>
+<%
+    response.setHeader("Cache-Control","no-cache, no-store, must-revalidate"); // HTTP 1.1
+    if (session.getAttribute("success-admin-login-uname")==null){
+        response.sendRedirect("http://localhost:8081/OpticLens/login-now.jsp");
+    }
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Urban Food | Register</title>
+    <title>Urban Food | Home</title>
 
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
     <!--Favicon-->
-    <link rel="icon" type="image/x-icon" href="/images/utensils-solid.svg">
+    <link rel="icon" type="http://localhost:8081/URBAN-FOODS/image/x-icon" href="http://localhost:8081/URBAN-FOODS/images/utensils-solid.svg">
 
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <!-- custom css file link  -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="http://localhost:8081/URBAN-FOODS/css/style.css">
+
 
 </head>
 <body>
@@ -24,23 +33,24 @@
 
 <header>
 
-    <a href="index.jsp" class="logo"><i class="fas fa-utensils"></i> Urban Food</a>
+    <a href="http://localhost:8081/URBAN-FOODS/admin/index.jsp" class="logo"><i class="fas fa-utensils"></i> Urban Food</a>
 
     <nav class="navbar">
-        <a href="index.jsp">home</a>
-        <a href="dishes.jsp">dishes</a>
-        <a href="index.jsp#about">about</a>
-        <a href="menu.jsp">menu</a>
-        <a href="review_form.jsp">review</a>
-        <a href="order_now.jsp">order</a>
+        <a class="active" href="#home">home</a>
+        <a href="http://localhost:8081/URBAN-FOODS/admin/dishes.jsp">dishes</a>
+        <a href="http://localhost:8081/URBAN-FOODS/admin/index.jsp#about">about</a>
+        <a href="http://localhost:8081/URBAN-FOODS/admin/menu.jsp">menu</a>
+        <a href="http://localhost:8081/URBAN-FOODS/admin/review_form.jsp">review</a>
+        <a href="http://localhost:8081/URBAN-FOODS/admin/order_now.jsp">order</a>
+        <a href="http://localhost:8081/URBAN-FOODS/admin/4-pages.jsp">Hello &#128075; <% String index_uname = (String) session.getAttribute("success-admin-login-uname"); %> <%= index_uname %></a>
     </nav>
 
     <div class="icons">
         <i class="fas fa-bars" id="menu-bars"></i>
         <i class="fas fa-search" id="search-icon"></i>
-        <a href="index.jsp#" class="fas fa-heart"></a>
-        <a href="index.jsp#" class="fas fa-shopping-cart"></a>
-        <a href="login.html" class="fas fa-user" style="background: var(--green);color:white"></a>
+        <a href="http://localhost:8081/URBAN-FOODS/admin/index.jsp#" class="fas fa-heart"></a>
+        <a href="http://localhost:8081/URBAN-FOODS/admin/index.jsp#" class="fas fa-shopping-cart"></a>
+        <a href="http://localhost:8081/URBAN-FOODS/admin-logout.jsp" class="fas fa-sign-out-alt"></a>
     </div>
 
 </header>
@@ -55,50 +65,30 @@
     <i class="fas fa-times" id="close"></i>
 </form>
 
-
-
-    <!-- register section start -->
-
+    <!--Update user section starts-->
     <section class="mylogin">
-    <section class="register-form">
+    <section class="login-form">
 
-        <form action="register.jsp" method="post">
-            <h3>User registration</h3>
-            <div class="inputbox">
-                <span class="fas fa-user"></span>
-                <input type="text" name="register_name" id="" placeholder="enter your name">
-            </div>
+        <form action="http://localhost:8081/URBAN-FOODS/admin/update.jsp" method="post">
+            <h3>Update User</h3>
             <div class="inputbox">
                 <span class="fas fa-envelope"></span>
-                <input type="email" name="register_email" id="" placeholder="enter your email">
+                <input type="email" name="update_email" id="" placeholder="enter your email">
             </div>
             <div class="inputbox">
-                <span class="fas fa-lock"></span>
-                <input type="password" name="register_password" id="" placeholder="enter your password">
-            </div>
-            <div class="inputbox">
-                <span class="fas fa-lock"></span>
-                <input type="password" name="register_confirm_password" id="" placeholder="confirm your password">
-            </div>
-            <div class="inputbox">
-                <select name="user_type">
+                <select name="update_user_type">
                     <option value="user">User</option>
                     <option value="admin">Admin</option>
                 </select>
             </div>
-            <input type="submit" value="Sign up" class="btn">
-            <a href="login.html" class="btn" style="background-color: var(--green);">Already have an account</a>
+
+            <input type="submit" value="Update user &#128100;" class="btn">
         </form>
 
 
     </section>
-    </section>
-
-
-    <!-- register section ends -->
-
-
-
+</section>
+    <!--Update user section ends-->
 <!-- footer section starts  -->
 
 <section class="footer">
@@ -142,8 +132,8 @@
         </div>
 
     </div>
+
     <div class="credit">Created by <span><a href="https://github.com/SJOSHITHSAIRAM" style="color:var(--green);font-weight: 900;">Joshith Sai Ram</a></span> | © 2022 | All rights reserved.</div>
-    
 
 </section>
 
@@ -151,7 +141,7 @@
 
 <!-- loader part  -->
 <div class="loader-container">
-    <img src="images/loader.gif" alt="">
+    <img src="http://localhost:8081/URBAN-FOODS/images/loader.gif" alt="">
 </div>
 
 
@@ -177,7 +167,7 @@
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
 <!-- custom js file link  -->
-<script src="js/script.js"></script>
+<script src="http://localhost:8081/URBAN-FOODS/js/script.js"></script>
 
 </body>
 </html>

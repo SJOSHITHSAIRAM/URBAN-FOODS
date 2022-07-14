@@ -39,7 +39,7 @@
 <html>
     <script>
         setTimeout(function(){
-            window.location.href = 'http://localhost:8081/URBAN-FOODS/index.jsp';
+            window.location.href = 'http://localhost:8081/URBAN-FOODS/admin/index.jsp';
          }, 5000);
     </script>
     <p>Hey <%= full_name %></p>
